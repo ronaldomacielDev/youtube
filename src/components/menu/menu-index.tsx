@@ -10,17 +10,19 @@ import {
 
 import HomeIcon from '../../assets/icons/icon-home.png';
 import ShortsIcon from '../../assets/icons/icon-youtube-shorts.png';
+import { useNavigate } from 'react-router-dom';
 
 const items = [0,0,0,0,0];
 
 
 function Menu(){
     const { openMenu } = useContext(OpenMenuContext);
+    const navigate = useNavigate()
  
     return (
         <Container openMenu={openMenu}>
             
-            <MenuItem openMenu={openMenu} >
+            <MenuItem openMenu={openMenu} onClick={() => navigate('/')}>
                 <ButtonIcon alt="" src={ HomeIcon } />
                 <span>Início </span>
             </MenuItem>
@@ -42,12 +44,12 @@ function Menu(){
             
             <LinhaDivisoria openMenu={openMenu}/>
 
-            <MenuItem openMenu={openMenu} >
+            <MenuItem openMenu={openMenu} onClick={() => navigate('/library')} >
                 <ButtonIcon alt="" src={ HomeIcon } />
                 <span>Biblioteca</span>
             </MenuItem>
 
-            <MenuItem openMenu={openMenu} isVisibleMenuItem={'histórico'} >
+            <MenuItem openMenu={openMenu} isVisibleMenuItem={'histórico'} onClick={() => navigate('/history')} >
                 <ButtonIcon alt="" src={ HomeIcon } />
                 <span>Histórico</span>
             </MenuItem>

@@ -16,7 +16,7 @@ const items = [0,0,0,0,0];
 
 function Menu(){
     const { openMenu } = useContext(OpenMenuContext);
-    alert(openMenu)
+ 
     return (
         <Container openMenu={openMenu}>
             

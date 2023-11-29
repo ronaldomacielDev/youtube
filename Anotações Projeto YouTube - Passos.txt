@@ -1,0 +1,221 @@
+1º Passo ===========================================================================================
+para criar um novo projeto
+
+### npx create-react-app youtube --templete-typescript => (youtube e o nome da pasta do projeto)
+
+2º Passo ===========================================================================================
+
+Deletar do projeto novo criado, os arquivos abaixo:
+
+* setupTests.js
+* reportWebVitals.js
+* logo.svg
+* App.css
+* App.test.js
+
+3º Passo ===========================================================================================
+
+=> no arquivo "App.js" apagar tudo que estiver dentro da div os imports deixando os codigo assim:
+
+function App() {
+  return (
+    <div className="App">
+     
+    </div>
+  );
+}
+
+export default App;
+
+
+4º Passo ===========================================================================================
+=> no arquivo "index.js" deletar algumas linhas de codigo deixando os assim:
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+5º Passo ===========================================================================================
+
+na pasta src => criar um  arquivo novo chamado: "index.d.ts" 
+
+nesse arquivo inserir a declaração abaixo:
+
+declare module '*.png';
+
+6º Passo ===========================================================================================
+
+na pasta do projeto (youtube) => criar um  arquivo novo chamado: "tsconfig.json" (na raiz do projeto)
+
+copiar um modelo pronto do professor paulo
+
+{
+    "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}
+
+
+7º Passo ===========================================================================================
+
+instalar o style components
+
+### npm i styled-components
+
+### npm i @types/styled-components -D
+
+se eu der 
+
+### npm start => deve abrir o projeto automaticamente
+
+
+8º Passo ===========================================================================================
+
+na pasta src criar as pastas 
+
+* assets
+* components => em components criar as pastas
+    * header
+    * menu
+* pages 
+
+
+
+
+
+9º Passo ==== as Rotas ==============================================================================
+
+instalar o react router dom
+
+### npm i react-router-dom 
+
+### npm i @types/react-router-dom -D
+
+
+
+10º Passo ===== Criando as Rotas =====================================================================
+
+
+=> no arquivo "App.js" acrescentar o import conforme abaixo:
+
+	=> import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+* o BrowserRouter deve envolver toda parte que vai utilizar de rotas
+
+* o Routes vai envolver todas as nossas rotas, deve ficar dentro do BrowserRouter
+
+* e simplemente para criarmos a nossa rota.
+ 
+
+
+
+
+
+
+11º Passo ===========================================================================================
+
+
+na pasta src criar as pastas 
+
+* pages 
+	* history => na pasta "history" criar os arquivos
+		-> index.tsx
+
+	* home => na pasta "home" criar os arquivos
+		-> index.tsx
+		
+	* library => na pasta "library" criar os arquivos
+		-> index.tsx
+
+
+
+
+Menu Lateral Parte 01 =================================================================
+
+scroll lateral 
+
+no "stylesMenu.ts" 
+
+container (function)
+
+overflow-y: auto; // se ultrapassar o numero de itens do menu a barra de rolagem aparece
+                      automaticamente
+
+no arquivo "index.css" acrescentar o código abaixo para ser padrão em varios navegadores.
+
+
+
+/* *****  navegador firefox ***** */
+* {
+  scrollbar-width: 10px;
+  scrollbar-color: #8c8c8c;
+}
+
+/* *****  navegador chrome e safari ***** */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #8c8c8c;
+  border-radius: 20px;
+}
+
+
+
+Passo14-DesafioEstadoGlobalOpenMenu ==============================================
+
+useContext => estado global
+
+React Hooks - Parte - 7 (useContext)
+
+context/Global => serve para centralizar valores e estados e compartilhar valores e estados entre compoentes que não interagem diretamente ou seja  um não e pai do outro e não é filho do outro.
+
+
+na pasta "src" criar a pasta 
+
+*** "contexts" e dentro da pasta "contexts" criar o arquivo  
+    
+    ** "openMenuContext.js"
+
+
+
+Passo16-Rotas =============================================================================================
+
+### npm i react-router-dom
+
+### npm i @types/react-router-dom -D
+
+
+no arquivo "app.js" 

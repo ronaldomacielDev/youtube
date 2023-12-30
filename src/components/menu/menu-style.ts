@@ -9,6 +9,8 @@ export const Container = styled.div<{openMenu: boolean}>`
     align-items: center;
     flex-direction: column;
     overflow-y: auto;
+    position: sticky;
+    top: 55px;
 
     background-color: bisque;
 `;
